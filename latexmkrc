@@ -1,0 +1,1 @@
+$ENV{'TTFONTS'}='fonts//:' . $ENV{'TTFONTS'};

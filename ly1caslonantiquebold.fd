@@ -1,0 +1,3 @@
+\ProvidesFile{ly1caslonantiquebold.fd}
+\DeclareFontFamily{LY1}{caslonantiquebold}{}
+\DeclareFontShape{LY1}{caslonantiquebold}{m}{n}{<-> CaslonAntique-Bold8y }{}
