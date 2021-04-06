@@ -56,13 +56,18 @@ footskip=40pt]{geometry}
 {\fontfamily{caslonantiquebold}\selectfont}
 
 % ------------------------------------
-% CHAPTER STYLE
+% DEFAULT CHAPTER STYLE
 % -------------------------------------
 \RequirePackage{titlesec}
 \renewcommand{\thechapter}{\Roman{chapter}}
 \titleformat{\chapter}[block]
-  {\Huge\cabfont}
-  {\chaptertitlename\ \thechapter:}{20pt}{\Huge}
+{\Huge\cabfont}
+{\chaptertitlename\ \thechapter:}{20pt}{\Huge}
+
+% ------------------------------------
+% DEFAULT SECTION STYLE
+% -------------------------------------
+\titleformat{\section}[block]{\Huge\cabfont}{}{20pt}{\Huge}
 
 % ------------------------------------
 % HEADERS and FOOTERS
