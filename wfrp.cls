@@ -17,7 +17,7 @@ footskip=40pt]{geometry}
 %----------------------------------
 
 \RequirePackage{ifthen}
-\RequirePackage[pages=all]{background}
+\RequirePackage{background}
 
 \AddEverypageHook{%
   \ifthenelse{\isodd{\value{page}}}%
