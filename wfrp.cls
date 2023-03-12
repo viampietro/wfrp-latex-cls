@@ -66,12 +66,23 @@ Warhammer Fantasy Roleplay 2nd edition. ]
 
 
 %----------------------------------
-% COLOR DEFINITIONS
+% COLOR DEFINITIONS & ASSIGNMENTS
 %----------------------------------
 
-\definecolor{sectioncolor}{RGB}{133, 14, 20}
-\definecolor{chaptercolor}{RGB}{100, 62, 44}
-\definecolor{leftrulemjboxcolor}{RGB}{147, 47, 45}
+% Color definitions
+
+\definecolor{irishcoffee}{RGB}{100, 62, 44}
+\definecolor{guardsmanred}{RGB}{147, 47, 45}
+\definecolor{cumulus}{RGB}{246, 243, 196}
+\definecolor{coriander}{RGB}{185, 180, 134}
+
+% Color assignments
+
+\colorlet{chaptercolor}{irishcoffee}
+\colorlet{sectioncolor}{guardsmanred}
+\colorlet{leftrulemjboxcolor}{guardsmanred}
+\colorlet{gameboxbgcolor}{cumulus}
+\colorlet{gameboxrulecolor}{coriander}
 
 %----------------------------------
 % TEXT STYLES & FORMATS
@@ -98,8 +109,8 @@ Warhammer Fantasy Roleplay 2nd edition. ]
 %----------------------------------
 % PAGE LAYOUT
 %----------------------------------
-\RequirePackage[top=2.3cm,
-bottom=2.8cm,
+\RequirePackage[top=2cm,
+bottom=3.2cm,
 left=1.5cm,
 right=1.5cm,
 footskip=40pt]{geometry}
@@ -163,12 +174,17 @@ footskip=40pt]{geometry}
 
 \pagestyle{fancy}
 
+% Adds a little length the header height
+\addtolength{\headheight}{\baselineskip}
+
 % ------------------------------------
 % DEFAULT HEADER
 % -------------------------------------
-\fancyhead{}
 \renewcommand{\chaptermark}[1]{%
   \markboth{#1}{}}
+
+% Clear all header fields (left, center and right fields)
+\fancyhead{}
 \fancyhead[C]{\fontsize{13}{15}\bfseries\leftmark}
 \renewcommand{\headrulewidth}{0pt}
 
@@ -186,6 +202,8 @@ footskip=40pt]{geometry}
   % ------------------------------------
   % DEFAULT HEADER
   % -------------------------------------
+  
+  % Clear all header fields (left, center and right fields)
   \fancyhead{}
   \fancyhead[C]{\fontsize{13}{15}\bfseries\leftmark}
   \renewcommand{\headrulewidth}{0pt}
@@ -206,5 +224,11 @@ footskip=40pt]{geometry}
   sharp corners, enlarge left by=2mm, width=\textwidth-2mm,%
   colframe=leftrulemjboxcolor, opacityback=0, left=2pt}
 
+% --------------------------------------------
+% ENVIRONMENT 
+% --------------------------------------------
 
+\newtcolorbox{gamebox}[1][]{standard jigsaw, fontupper=\bfseries,%
+  boxrule=1pt, sharp corners, colframe=gameboxrulecolor,
+  colback=gameboxbgcolor, #1}
 
